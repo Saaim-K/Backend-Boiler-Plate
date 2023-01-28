@@ -1,0 +1,25 @@
+{
+  "name": "backend-boiler-plate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.mjs",
+    "dev": "nodemon server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saaim-K/Backend-Boiler-Plate.git"
+  },
+  "author": "Saaim Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saaim-K/Backend-Boiler-Plate/issues"
+  },
+  "homepage": "https://github.com/Saaim-K/Backend-Boiler-Plate#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
