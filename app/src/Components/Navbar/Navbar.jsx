@@ -24,13 +24,7 @@ const Navbar = () => {
                     <a>About</a>
                     <a>Contact</a>
                     <a>Gallery</a>
-                    <a>Power</a>
-                    <select name="cars" id="cars">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                    </select>
+                    <a>Logout</a>
                 </div>
             </div>
         </>
