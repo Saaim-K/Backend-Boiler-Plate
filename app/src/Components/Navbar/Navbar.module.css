@@ -6,6 +6,7 @@
   width: 100%;
   background-color: #15171b;
   position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -96,6 +97,6 @@ a:hover {
   }
 
   #check:checked~.links {
-    height: calc(100vh - 50px);
+    height: 100vh;
   }
 }

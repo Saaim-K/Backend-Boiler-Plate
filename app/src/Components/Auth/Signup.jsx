@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styles from './Auth.module.css'
 
 const Signup = () => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    
+    
+    
     return (
         <>
             <form id={styles.form} autoComplete="off">
@@ -23,10 +29,10 @@ const Signup = () => {
                         <span className={styles.required}>Password</span>
                     </label>
                 </div>
-                <input type="checkbox" name="show_password" className={`${styles.show_password} ${styles.hidden}`} id={styles.show_password} />
+                {/* <input type="checkbox" name="show_password" className={`${styles.show_password} ${styles.hidden}`} id={styles.show_password} />
                 <label className={styles.label_show_password} htmlFor="show_password">
                     <span>Show Password</span>
-                </label>
+                </label> */}
                 <input type="submit" value="Sign Up" />
                 {/* <div className="email">
                         <button>Forgot password?</button>
