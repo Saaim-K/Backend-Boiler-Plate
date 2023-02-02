@@ -1,10 +1,11 @@
 import React from 'react'
-import useState from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import styles from './Auth.module.css'
 
-let baseUrl = '';
-if (window.location.href.split(':')[0] === 'http') { baseUrl = 'http://localhost:5000' }
+
+let baseUrl = ''
+if (window.location.href.split(":")[0] === 'http') { baseUrl = 'http://localhost:5000' }
 
 
 const Signup = () => {
@@ -46,16 +47,16 @@ const Signup = () => {
           </label>
         </div>
         {/* <input type="checkbox" name="show_password" className={`${styles.show_password} ${styles.hidden}`} id={styles.show_password} />
-                <label className={styles.label_show_password} htmlFor="show_password">
-                    <span>Show Password</span>
-                </label> */}
+          <label className={styles.label_show_password} htmlFor="show_password">
+              <span>Show Password</span>
+          </label> */}
         <input type="submit" value="Sign Up" />
         {/* <div className="email">
-                        <button>Forgot password?</button>
-                    </div> */}
+                  <button>Forgot password?</button>
+              </div> */}
         {/* <div className="email">
-                        <Link to={`/signup`}>Don't have an account ?</Link>
-                    </div> */}
+                  <Link to={`/signup`}>Don't have an account ?</Link>
+              </div> */}
         <figure>
           <div className={styles.body}></div>
           <div className={`${styles.neck} ${styles.skin}`}></div>
@@ -70,11 +71,11 @@ const Signup = () => {
         </figure>
       </form>
 
-
       <h1>{name}</h1>
       <h1>{email}</h1>
       <h1>{password}</h1>
     </>
   )
 }
+
 export default Signup
