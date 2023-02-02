@@ -4,37 +4,29 @@ import cors from 'cors'
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const mongodbURI = process.env.mongodbURI || "mongodb+srv:Backend-Boiler-Plate:backend@cluster0.4rf4ikm.mongodb.net/Backend-Boiler-Plate?retryWrites=true&w=majority"
+const mongodbURI = process.env.mongodbURI || "mongodb+srv://Backend-Boiler-Plate:backend@cluster0.4rf4ikm.mongodb.net/Backend-Boiler-Plate?retryWrites=true&w=majority"
 
 
 app.use(cors())
 app.use(express.json());
 mongoose.connect(mongodbURI)
 
-
-let userSchema = new mongoose.Schema({
+let productSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    email: { type: String, trim: true, lowercase: true, unique: true },
-    phone: { type: String, required: true },
-    password: { type: String, required: true },
+    price: Number,
     createdOn: { type: Date, default: Date.now }
 })
-const userModel = mongoose.model('Users', userSchema);
+const productModel = mongoose.model('Products', productSchema);
 
 
 
 
-app.get('/signup', (req, res) => {
-    let email = req.body.email
-    let name = req.body.name
-    let password = req.body.password
-    res.send('Hello World')
-})
-
-
-
-
-
+// app.get('/signup', (req, res) => {
+//     let email = req.body.email
+//     let name = req.body.name
+//     let password = req.body.password
+//     res.send('Hello World')
+// })
 
 
 
@@ -44,7 +36,12 @@ app.get('/signup', (req, res) => {
 
 
 
-////////////////mongodb connected disconnected events///////////////////////////////////////////////
+
+
+
+
+
+//////////////mongodb connected disconnected events///////////////////////////////////////////////
 mongoose.connection.on('connected', function () {//connected
     console.log("Mongoose is connected");
     // process.exit(1);
@@ -67,7 +64,7 @@ process.on('SIGINT', function () {/////this function will run jst before app is 
         process.exit(0);
     });
 });
-////////////////mongodb connected disconnected events///////////////////////////////////////////////
+//////////////mongodb connected disconnected events///////////////////////////////////////////////
 
 
 
