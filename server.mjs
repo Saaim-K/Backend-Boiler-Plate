@@ -21,16 +21,6 @@ const productModel = mongoose.model('Products', productSchema);
 
 
 
-// app.get('/signup', (req, res) => {
-//     let email = req.body.email
-//     let name = req.body.name
-//     let password = req.body.password
-//     res.send('Hello World')
-// })
-
-
-
-
 
 
 
