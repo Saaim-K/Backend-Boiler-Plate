@@ -19,13 +19,13 @@ const Navbar = () => {
                     </label>
                 </div>
 
-                <div className={styles.links}>
+                {/* <div className={styles.links}>
                     <a>Home</a>
                     <a>About</a>
                     <a>Contact</a>
                     <a>Gallery</a>
                     <a>Logout</a>
-                </div>
+                </div> */}
             </div>
         </>
 

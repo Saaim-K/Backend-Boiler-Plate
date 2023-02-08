@@ -33,7 +33,7 @@ app.post('/product', (req, res) => {
     }
     productModel.create({
         name: body.name,
-        price: body.price,
+        price: body.price
     },
         (error, uploaded) => {
             if (!error) {
@@ -149,13 +149,9 @@ app.put('/product/:id', async (req, res) => {
     const body = req.body
     const id = req.params.id
 
-    if (!body.name || !body.price || !body.ratings || !body.description) {
+    if (!body.name || !body.price) {
         res.status(400).send({
-            message: `Required Paramters Missing. Example request body {
-                name:"name"
-                price:"price"
-                description:"description"
-            }`
+            message: `Required Paramters Missing. Please provide name and price`
         })
         return;
     }
@@ -164,8 +160,6 @@ app.put('/product/:id', async (req, res) => {
             {
                 name: body.name,
                 price: body.price,
-                ratings: body.ratings,
-                description: body.description
             },
             { new: true }
         ).exec();
@@ -183,13 +177,6 @@ app.put('/product/:id', async (req, res) => {
     }
 })
 // ----------------------------------- Update Product -----------------------------------
-
-
-
-
-
-
-
 
 
 
