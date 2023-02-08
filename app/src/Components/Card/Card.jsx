@@ -11,6 +11,7 @@ if (window.location.href.split(':')[0] === 'http') {
 const Card = () => {
    const [name, setName] = useState('')
    const [price, setPrice] = useState('')
+   const [products, setProducts] = useState([])
 
    const addProduct = async (e) => {
       e.preventDefault()
@@ -33,6 +34,19 @@ const Card = () => {
             <input className={styles.class} type="number" onChange={(e) => { setPrice(e.target.value) }} />
             <input className={styles.class} type="submit" />
          </form>
+         <hr />
+         {
+            products.map((product, i) => {
+               (
+                  <div key={i}>
+                     <h1>{product.name}</h1>
+                     <p>{product.price}</p>
+                  </div>
+               )
+            })
+         }
+
+
       </>
    )
 }
