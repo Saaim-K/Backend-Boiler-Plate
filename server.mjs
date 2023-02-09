@@ -4,8 +4,7 @@ import cors from 'cors'
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const mongodbURI = process.env.mongodbURI || "mongodb+srv://Backend-Boiler-Plate:backend@cluster0.4rf4ikm.mongodb.net/Backend-Boiler-Plate?retryWrites=true&w=majority"
-
+const mongodbURI = process.env.mongodbURI || "mongodb+srv://Backend:Backend@backend.xfgg8bk.mongodb.net/backend?retryWrites=true&w=majority"
 
 app.use(cors())
 app.use(express.json());
@@ -18,7 +17,6 @@ let productSchema = new mongoose.Schema({
     createdOn: { type: Date, default: Date.now }
 })
 const productModel = mongoose.model('Products', productSchema);
-
 
 
 
@@ -60,7 +58,7 @@ app.get('/products', (req, res) => {
         if (!error) {
             console.log("uploaded", allFound)
             res.send({
-                message: `Product Added Succesfully 👍`,
+                message: `Fetched Product Succesfully 👍`,
                 data: allFound
             })
         } else {
@@ -96,11 +94,13 @@ app.get('/product/:id', (req, res) => {
     })
 })
 // ------------------------ Get Specified Product ------------------------
+
 // ----------------------------------- Get Product -----------------------------------
 
 
 
 // ----------------------------------- Delete Product -----------------------------------
+
 // ------------------------ Delete All Product ------------------------
 app.delete('/products', (req, res) => {
     productModel.deleteMany({}, (error, data) => {
@@ -140,6 +140,7 @@ app.delete('/product/:id', (req, res) => {
     })
 })
 // ------------------------ Delete Specified Product ------------------------
+
 // ----------------------------------- Delete Product -----------------------------------
 
 
@@ -182,24 +183,6 @@ app.put('/product/:id', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////mongodb connected disconnected events///////////////////////////////////////////////
 mongoose.connection.on('connected', function () {//connected
     console.log("Mongoose is connected");
@@ -224,24 +207,6 @@ process.on('SIGINT', function () {/////this function will run jst before app is 
     });
 });
 //////////////mongodb connected disconnected events///////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // const __dirname = path.resolve()

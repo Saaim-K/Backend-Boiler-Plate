@@ -11,7 +11,7 @@ const App = () => {
       {/* <Login /> */}
       {/* <Signup /> */}
       {/* <Navbar /> */}
-      <Card />
+      {/* <Card /> */}
     </>
   )
 }
