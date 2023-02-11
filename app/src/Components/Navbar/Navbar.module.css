@@ -33,14 +33,14 @@
   padding-right: 35px;
 }
 
-a {
+.a {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
 }
 
-a:hover {
+.a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   color: #fcc300;
 }
@@ -86,7 +86,7 @@ a:hover {
     top: 50px;
   }
 
-  a {
+  .a {
     display: block;
     width: 100%;
     text-transform: uppercase;

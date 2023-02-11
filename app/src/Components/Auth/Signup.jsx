@@ -3,8 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import styles from './Auth.module.css'
 
-
-let baseUrl = ''
+let baseUrl = '';
 if (window.location.href.split(":")[0] === 'http') { baseUrl = 'http://localhost:5000' }
 
 
@@ -15,9 +14,8 @@ const Signup = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault()
-    const data = { name, email, password }
     try {
-      axios.post(`${baseUrl}/signup`, { data })
+      axios.post(`${baseUrl}/signup`, { name, email, password })
         .then(response => {
           console.log("User Added Succesfully 👍", response.data);
         })
@@ -72,10 +70,6 @@ const Signup = () => {
           <div className={styles.shirt_2}></div>
         </figure>
       </form>
-
-      <h1>{name}</h1>
-      <h1>{email}</h1>
-      <h1>{password}</h1>
     </>
   )
 }
