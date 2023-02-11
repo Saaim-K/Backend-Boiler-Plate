@@ -13,12 +13,14 @@ const Signup = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const handleSubmit = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault()
     const data = { name, email, password }
     try {
       axios.post(`${baseUrl}/signup`, { data })
-      console.log("Login Successful")
+        .then(response => {
+          console.log("User Added Succesfully 👍", response.data);
+        })
     }
     catch (error) {
       console.log("error: ", error);
@@ -27,7 +29,7 @@ const Signup = () => {
 
   return (
     <>
-      <form id={styles.form} autoComplete="off" onSubmit={handleSubmit}>
+      <form id={styles.form} autoComplete="off" onSubmit={handleSignIn}>
         <div>
           <label>
             <input type="text" placeholder="Full Name" required onChange={(e) => { setName(e.target.value) }} />
