@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken"
 import cookieParser from 'cookie-parser';
 
 
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const mongodbURI = process.env.mongodbURI || "mongodb+srv://Backend:Backend@backend.xfgg8bk.mongodb.net/backend?retryWrites=true&w=majority"
